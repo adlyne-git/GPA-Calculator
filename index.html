@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Student GPA Calculator</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Student GPA Calculator</h1>
+			<p>Department of Computer Science</p>
+			<button id="dark-toggle">Dark Mode</button>
+		</header>
+
+		<main>
+			<section class="form-section">
+				<h2>Add Course</h2>
+				<form id="course-form">
+					<input
+						type="text"
+						id="course-code"
+						placeholder="Course Code (e.g., COS101)"
+						required
+					/>
+					<input
+						type="number"
+						id="course-unit"
+						placeholder="Credit Unit"
+						min="1"
+						required
+					/>
+
+					<select id="course-grade" required>
+						<option value="">Select Grade</option>
+						<option value="A">A</option>
+						<option value="B">B</option>
+						<option value="C">C</option>
+						<option value="D">D</option>
+						<option value="E">E</option>
+						<option value="F">F</option>
+					</select>
+
+					<button type="submit">Add Course</button>
+				</form>
+			</section>
+
+			<section class="table-section">
+				<h2>Course List</h2>
+				<table id="course-table">
+					<thead>
+						<tr>
+							<th>Course Code</th>
+							<th>Credit Unit</th>
+							<th>Grade</th>
+							<th>Grade Point</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</section>
+
+			<section class="result-section">
+				<button id="calculate-btn">Calculate GPA</button>
+				<button id="clear-btn" style="background-color: #ff4d4d">
+					Clear All
+				</button>
+				<button id="download-btn">Download as Image</button>
+				<h3 id="gpa-result">Your GPA will appear here</h3>
+			</section>
+		</main>
+
+		<section class="cgpa-section">
+			<h2>CGPA Calculator</h2>
+			<input
+				type="number"
+				id="prev-gpa"
+				placeholder="Previous CGPA"
+				step="0.01"
+			/>
+			<input
+				type="number"
+				id="prev-units"
+				placeholder="Total Previous Units"
+				min="1"
+			/>
+			<button id="calc-cgpa">Calculate CGPA</button>
+			<h3 id="cgpa-result">Your CGPA will appear here</h3>
+		</section>
+
+		<div id="success-popup">GPA Calculated Successfully!</div>
+
+		<footer>
+			<p>Made by Adlyne Ngwu | Internship Project</p>
+			<p>New User? <a href="signup.html">Sign Up</a></p>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>
