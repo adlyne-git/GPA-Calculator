@@ -1,0 +1,196 @@
+* {
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: #f4f6fa;
+	margin: 0;
+	padding: 0;
+	color: #333;
+}
+
+header {
+	text-align: center;
+	padding: 1.5rem;
+	background-color: #0b7a59;
+	color: white;
+}
+
+main {
+	width: 90%;
+	max-width: 800px;
+	margin: 2rem auto;
+	background: white;
+	padding: 2rem;
+	border-radius: 12px;
+	box-shadow: #333;
+}
+
+h2 {
+	color: #0b7a59;
+}
+
+form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+form input,
+form select,
+form button {
+	padding: 10px;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+}
+
+form button {
+	background-color: #0b7a59;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+form button:hover {
+	background-color: #0b7a59;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 1rem;
+}
+
+th,
+td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+}
+
+th {
+	background-color: #0b7a59;
+	color: white;
+}
+
+.result-section {
+	text-align: center;
+	margin-top: 2rem;
+}
+
+#calculate-btn {
+	background-color: #0b7a59;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+#calculate-btn:hover {
+	background-color: #0b7a59;
+}
+
+footer {
+	text-align: center;
+	padding: 1rem;
+	margin-top: 2rem;
+	background-color: #f0f0f0;
+	font-size: 0.9rem;
+	color: #555;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
+	main {
+		width: 95%;
+		padding: 1rem;
+	}
+
+	form {
+		flex-direction: column;
+	}
+
+	form input,
+	form select,
+	form button {
+		width: 100%;
+	}
+
+	table {
+		font-size: 14px;
+	}
+
+	#calculate-btn,
+	#clear-btn {
+		width: 100%;
+		margin-top: 10px;
+	}
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+	background-color: #121212;
+	color: #f4f4f4;
+}
+
+body.dark-mode main {
+	background-color: #1e1e1e;
+	color: #fff;
+}
+
+body.dark-mode header {
+	background-color: #000;
+}
+
+body.dark-mode table th {
+	background-color: #333;
+}
+
+#dark-toggle {
+	float: right;
+	background: transparent;
+	border: 1px solid white;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+#success-popup {
+	display: none;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	background: #00a86b;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 8px;
+	animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+#signup-link {
+	float: right;
+	background: #007bff;
+	color: white;
+	padding: 8px 14px;
+	border-radius: 6px;
+	text-decoration: none;
+}
+
+#signup-link:hover {
+	background: #0056b3;
+}
