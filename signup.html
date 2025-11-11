@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sign Up | GPA Calculator</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h2>Create Account</h2>
+			<form id="signup-form">
+				<input type="text" id="fullname" placeholder="Full Name" required />
+				<input type="email" id="email" placeholder="Email" required />
+				<input
+					type="password"
+					id="password"
+					placeholder="Password"
+					required
+					minlength="6"
+				/>
+				<button type="submit">Sign Up</button>
+			</form>
+			<p>Already have an account? <a href="signin.html">Sign In</a></p>
+		</div>
+
+		<script>
+			document
+				.getElementById("signup-form")
+				.addEventListener("submit", function (e) {
+					e.preventDefault();
+
+					const name = document.getElementById("fullname").value.trim();
+					const email = document
+						.getElementById("email")
+						.value.trim()
+						.toLowerCase();
+					const password = document.getElementById("password").value.trim();
+
+					// Get existing users or empty array
+					const users = JSON.parse(localStorage.getItem("users") || "[]");
+
+					// Check if user already exists
+					if (users.some((user) => user.email === email)) {
+						alert("This email is already registered. Please sign in.");
+						return;
+					}
+
+					// Add new user
+					users.push({
+						name,
+						email,
+						password,
+						courses: [],
+						gpa: null,
+						theme: "light",
+					});
+					localStorage.setItem("users", JSON.stringify(users));
+
+					// Set current user
+					localStorage.setItem("currentUser", email);
+					localStorage.setItem("loggedIn", "true");
+
+					alert("Account created successfully!");
+					window.location.href = "calculator.html";
+				});
+		</script>
+	</body>
+</html>
